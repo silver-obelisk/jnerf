@@ -4,11 +4,7 @@
 </div>
 
 ## Introduction
-JNeRF is an NeRF benchmark based on [Jittor](https://github.com/Jittor/jittor). JNeRF supports Instant-NGP capable of training NeRF in 5 seconds and achieves similar performance and speed to the paper.
-
-5s training demo of Instant-NGP implemented by JNeRF:
-
-<img src="docs/demo_5s.gif" width="300"/>
+This project is used for jittor AI competition
 
 ## Install
 JNeRF environment requirements:
