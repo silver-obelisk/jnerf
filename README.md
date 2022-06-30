@@ -29,7 +29,7 @@ JNeRF environment requirements:
 **Step 1: Install the requirements**
 ```shell
 sudo apt-get install tcl-dev tk-dev python3-tk
-git clone https://github.com/Jittor/JNeRF
+git clone https://github.com/silver-obelisk/JNeRF
 cd JNeRF
 python -m pip install -r requirements.txt
 ```
@@ -51,7 +51,7 @@ After installation, you can ```import jnerf``` in python interpreter to check if
 
 ### Datasets
 
-We use Car,Coffee,Scarf and Scar datasets and blender lego datasets for training demonstrations. 
+We use Car,Coffee,Scarf and Scar datasets for training demonstrations. 
 
 
 ### Train from scratch
