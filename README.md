@@ -51,21 +51,8 @@ After installation, you can ```import jnerf``` in python interpreter to check if
 
 ### Datasets
 
-We use fox datasets and blender lego datasets for training demonstrations. 
+We use Car,Coffee,Scarf and Scar datasets and blender lego datasets for training demonstrations. 
 
-#### Fox Dataset
-We provided fox dataset (from [Instant-NGP](https://github.com/NVlabs/instant-ngp)) in this repository at `./data/fox`.
-
-#### Lego Dataset
-You can download the lego dataset in nerf_example_data.zip at https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1. And move `lego` folder to `./data/lego`.
-
-#### Customized Datasets
-
-If you want to train JNerf with your own dataset, then you should follow the format of our datasets. You should split your datasets into training, validation and testing sets. Each set should be paired with a json file that describes the camera parameters of each images.
-
-### Config
-
-We organize our configs of JNeRF in projects/. You are referred to `./projects/ngp/configs/ngp_base.py` to learn how it works.
 
 ### Train from scratch
 你可以使用如下代码分别对Car,Coffee,Scarf,Scar四个场景进行训练
@@ -75,71 +62,7 @@ python tools/run_net.py --config-file ./projects/ngp/configs/ngp_Coffee.py
 python tools/run_net.py --config-file ./projects/ngp/configs/ngp_Scarf.py
 python tools/run_net.py --config-file ./projects/ngp/configs/ngp_comp.py
 ```
-NOTE: Competitors participating in the Jittor AI Challenge can use `./projects/ngp/configs/ngp_comp.py` as config.
 
-### Test with pre-trained model
-
-After training, the ckpt file `params.pkl` will be automatically saved in `./logs/lego/`. And you can modify the ckpt file path by setting the `ckpt_path` in the config file. 
-
-Set the `--task` of the command to `test` to test with pre-trained model:
-```shell
-python tools/run_net.py --config-file ./projects/ngp/configs/ngp_base.py --task test
-```
-
-## Performance
-
-Instant-ngp implemented by JNeRF achieves similar performance and speed to the paper. The performance comparison can be seen in the table below and training speed of JNeRF-NGP on RTX 3090 is about 133 iters/s. 
-
-
-|    Models     |    implementation      | Dataset | PSNR |
-|----|---|---|---|
-| Instant-ngp | paper | lego | 36.39(5min) |
-| Instant-ngp | JNeRF | lego | 36.41(5min) |
-| NeRF        | JNeRF | lego | 32.49 |
-
-## Plan of Models
-
-JNeRF will support more valuable NeRF models in the future, if you are also interested in JNeRF and want to improve it, welcome to submit PR!
-
-<b>:heavy_check_mark:Supported  :clock3:Doing :heavy_plus_sign:TODO</b>
-
-- :heavy_check_mark: Instant-NGP
-- :heavy_check_mark: NeRF
-- :clock3: Mip-NeRF
-- :heavy_plus_sign: Plenoxels
-- :heavy_plus_sign: StylizedNeRF
-- :heavy_plus_sign: NeRF-Editing
-- :heavy_plus_sign: DrawingInStyles
-- :heavy_plus_sign: NSVF
-- :heavy_plus_sign: NeRFactor
-- :heavy_plus_sign: pixelNeRF
-- :heavy_plus_sign: Recursive-NeRF
-- :heavy_plus_sign: StyleNeRF
-- :heavy_plus_sign: EG3D
-- :heavy_plus_sign: ...
-
-## Contact Us
-
-If you are interested in JNeRF or NeRF research and want to build the JNeRF community with us, contributing is very welcome, please contact us! 
-
-Email: jittor@qq.com
-
-JNeRF QQ Group: 689063884
-
-<img src="docs/jnerf_qrcode.jpg" width="200"/>
-
-If you have any questions about Jittor, you can [file an issue](https://github.com/Jittor/jittor/issues), or join our Jittor QQ Group: 761222083
-
-<img src="docs/jittor_qrcode.jpg" width="200"/>
-
-## Acknowledgements
-
-The original implementation comes from the following cool project:
-* [Instant-NGP](https://github.com/NVlabs/instant-ngp)
-* [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn)
-* [Eigen](https://github.com/Tom94/eigen) ([homepage](https://eigen.tuxfamily.org/index.php?title=Main_Page))
-
-Their licenses can be seen at `licenses/`, many thanks for their nice work!
 
 
 ## Citation
